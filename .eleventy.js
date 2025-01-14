@@ -1,10 +1,13 @@
 const { DateTime } = require("luxon");
+const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/_assets");
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addWatchTarget("./src/css/");
+
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin);
   
   // Date Shortcodes/Filters
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);

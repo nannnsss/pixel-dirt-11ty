@@ -4,7 +4,7 @@ title: "blog"
 tags: "nav"
 pagination:
   data: collections.posts
-  size: 5
+  size: 3
   alias: posts
 ---
 
@@ -18,7 +18,7 @@ pagination:
     <div>
       <hr>
       <small>
-        {{ post.date postDate }}
+        {{ post.date | postDate }}
       </small>
     </div>
     <div>
